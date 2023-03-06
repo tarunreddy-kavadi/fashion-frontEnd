@@ -1,0 +1,145 @@
+.product-images-slider {
+    .swiper-slide {
+        padding-top: 100%;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+
+    .swiper-button-prev {
+        left: 0;
+        color: #000;
+    }
+
+    .swiper-button-next {
+        right: 0;
+        color: #000;
+    }
+}
+
+.product-images-slider-thumbs {
+    .swiper-slide {
+        cursor: pointer;
+        border: 1px solid #dddbdb;
+
+        &-thumb-active {
+            border-color: #ff0000;
+        }
+    }
+
+    &-wrapper {
+        width: 100%;
+        padding-top: 100%;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+
+
+
+
+
+
+// const swiperSlide=styled.div`{
+//     cursor: pointer;
+//     border: 1px solid #dddbdb;
+
+//     &-thumb-active {
+//         border-color: #ff0000;
+//     }
+//     &-wrapper {
+//         width: 100%;
+//         padding-top: 100%;
+//         overflow: hidden;
+//         position: relative;
+
+//         img {
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             width: 100%;
+//         }
+// }`;
+
+
+// const Image = styled.div`
+// width :30vw;
+// height:90vh;
+// object-fit: cover;
+// overflow: hidden;
+// ${mobile({height:"40vh"})}
+// img {
+//     position: absolute;
+//     top:-80px;
+//     left: 0;
+//     width: 100%;
+// }
+// `;
+// const ImgSlider=styled.div`
+//         cursor: pointer;
+//         border: 1px solid #dddbdb;
+//         img{
+//             cursor:pointer;
+//             position: absolute;
+//             height: 10px;
+//             top: 0;
+//             left: 0;
+//             width: 100%;}
+//     `;
+
+ /* <Image>  
+        <NavButton position="left">
+            <ArrowLeft/>
+        </NavButton> */
+        // <Image> 
+        // <Swiper
+        //     loop={true}
+        //     spaceBetween={10}
+        //     navigation={true}
+        //     modules={[Navigation, Thumbs]}
+        //     grabCursor={true}
+        //     thumbs={{ swiper: activeThumb }}
+        // ><ImgSlider>
+        //     {
+        //         product.img?.map((item, index) => (
+        //             <SwiperSlide key={index}>
+        //                 <img src={item} alt="product images" />
+        //             </SwiperSlide>
+        //         ))
+        //     }
+        //     </ImgSlider>
+        //      </Swiper>
+        //      </Image> 
+             
+        //      <Swiper
+        //     onSwiper={setActiveThumb}
+        //     loop={true}
+        //     spaceBetween={10}
+        //     slidesPerView={4}
+        //     modules={[Navigation, Thumbs]}
+        //     > 
+        //         {product.img?.map((item, index) => (
+        //             <SwiperSlide key={index}>
+        //                     <img src={item} alt="product images" />
+        //             </SwiperSlide>
+        //         ))}
+               
+        // </Swiper>
+       
+            /* <NavButton position="right">
+                <ArrowRight/>
+            </NavButton>
+            </Image> */
