@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled, {keyframes} from 'styled-components'
 import {Search,ShoppingCartOutlined} from "@material-ui/icons"
-import {Badge} from "@material-ui/core";
+import {Badge, Hidden} from "@material-ui/core";
 import {mobile} from "../responsive";
 import { useSelector } from 'react-redux';
 import {Link } from 'react-router-dom';
@@ -61,6 +61,7 @@ align-items: center;
 justify-content: flex-end;
 ${mobile({flex: 2, justifyContent:"center"})}
 `;
+const Hide =styled.div``;
 const MenuItem = styled.div`
    font-size: 14px;
    cursor: pointer;
@@ -87,11 +88,15 @@ const Navbar = () => {
   const user = useSelector((state)=>state.user)
   const [search, setSearch] = useState("")
   const dispatch = useDispatch()
+//  />
   const[toast ,setToast] = useState({
     text:"",
     status: false,
     bg:""
   })
+  if(!user){
+    <Hide>{console.log("nothing hidden")}</Hide>
+   }else { <Hide style={{display:'none'}}>{console.log("hidden")}</Hide>}
   const notify = ()=>{
     dispatch(logout())
     dispatch(emptyCart()) ?
@@ -104,7 +109,7 @@ const Navbar = () => {
       status: true,
       bg:'red'
     })
-    console.log(search)
+    
   }
   return (
     <Container>
@@ -129,6 +134,8 @@ const Navbar = () => {
                 </Logo>
                 </Center>
                 <Right>
+                  {/* {login} */}
+                   
                    <Link to = "/register" style={{textDecoration: 'none', color:'teal'}}><MenuItem>REGISTER</MenuItem></Link>
                     <Link to = "/login" style={{textDecoration: 'none', color:'teal'}}><MenuItem>LOG IN</MenuItem></Link>
                     <Link to = "/"  onClick={notify} style={{textDecoration: 'none', color:'teal'}}><MenuItem>LOGOUT</MenuItem></Link>
