@@ -1,9 +1,4 @@
-[[redirects]]
-  from = "https://quiet-kulfi-8dacf7.netlify.app"
-  to = "https://quiet-kulfi-8dacf7.netlify.app/login"
-  status = 200
-  force = true
-  headers = {X-From = "Netlify"}
+
 [[headers]]
   for = "/*"
   [headers.values]
