@@ -7,7 +7,10 @@ import { publicRequest} from "../requestMethods";
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
-    const res = await publicRequest.post("/auth/login", user);
+    const res = await publicRequest.post("/auth/login", {
+      user,
+      headers:{token: `Bearer ${TOKEN}`},
+    });
     dispatch(loginSuccess(res.data));
   } catch (err) {
     dispatch(loginFailure());
