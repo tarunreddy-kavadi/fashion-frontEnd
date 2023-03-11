@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://fashion-backend-65852.web.app";
+const BASE_URL = "https://fashion-backend-65852.web.app/api";
 // const TOKEN =
 //   JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser
 //     .accessToken || "";
