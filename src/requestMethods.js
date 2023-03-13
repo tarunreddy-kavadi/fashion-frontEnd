@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = "https://fashionbackend.herokuapp.com";
+const BASE_URL = "https://fashionbackend.herokuapp.com/";
+
 //http://localhost:5000/api/
 // const TOKEN =
 //   JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser
