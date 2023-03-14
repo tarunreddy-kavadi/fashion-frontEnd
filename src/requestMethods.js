@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://fashion-backend-65852.firebaseapp.com/api/";
+const BASE_URL = "https://fashionbackend.herokuapp.com/api/";
 
 //http://localhost:5000/api/
 // const TOKEN =
