@@ -20,8 +20,8 @@ const Products = ({ cat, filters, sort }) => {
       try {
         const res = await axios.get(
           cat
-            ? `http://fashionbackend.herokuapp.com/api/products?category=${cat}`
-            : "http://fashionbackend.herokuapp.com/api/products"
+            ? `https://fashionbackend.herokuapp.com/api/products?category=${cat}`
+            : "https://fashionbackend.herokuapp.com/api/products"
         );
         setProducts(res.data);
       } catch (err) {}
