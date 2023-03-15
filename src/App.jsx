@@ -44,8 +44,8 @@ const App = () => {
       </ProtectedRoute>
           } />
      <Route path="/order" element={<Order />}/>
-     <Route path="/login" element= {user ? <Navigate to ="/"/> : <Login/>}/>
-     <Route path="/register" element={user ?<Navigate to = "/" /> : <Register/>} />
+     <Route path="/login" element= {user ? <Navigate to ="/" style={{display:'none'}}/> : <Login/>}/>
+     <Route path="/register" element={user ?<Navigate to = "/" style={{display:'none'}}/> : <Register/>} />
     <Route path ="/success" placeholder="search..." data={Products}element={<Success/>}/>
     <Route path ="/cancel" element={<Cancel/>}/>
     <Route path ="/checkout" element={user ? <Navigate to = "/checkout/payment"/> : <Login/>}/>
