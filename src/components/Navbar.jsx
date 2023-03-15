@@ -95,12 +95,7 @@ const Navbar = () => {
     status: false,
     bg:""
   })
-  useEffect(()=>{
-    const display = ()=>{
-      !user ? <Navigate style={{display:'none'}}/> : <Navigate/>
-    }
-    display();
-  },[])
+  
   const notify = ()=>{
     dispatch(logout())
     dispatch(emptyCart()) ?
@@ -142,7 +137,7 @@ const Navbar = () => {
                    
                    <Link to = "/register" style={{textDecoration: 'none', color:'teal'}}><MenuItem>REGISTER</MenuItem></Link>
                     <Link to = "/login" style={{textDecoration: 'none', color:'teal'}}><MenuItem>LOG IN</MenuItem></Link>
-                    <Navigate to = "/"  onClick={notify} style={{textDecoration: 'none', color:'teal'}}><MenuItem>LOGOUT</MenuItem></Navigate>
+                    <Navigate to = "/"  onClick={notify} style={{textDecoration: 'none', color:'teal'}} ><MenuItem>LOGOUT</MenuItem></Navigate>
                     <MenuItem>
                     <Badge badgeContent={cart.quantity} color="secondary">
                     <Link to = "/cart">
