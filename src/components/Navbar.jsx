@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react'
 import styled, {keyframes} from 'styled-components'
 import {Search,ShoppingCartOutlined} from "@material-ui/icons"
-import {Badge, Hidden} from "@material-ui/core";
+import {Badge} from "@material-ui/core";
 import {mobile} from "../responsive";
 import { useSelector } from 'react-redux';
-import {Link } from 'react-router-dom';
+import {Link, Navigate } from 'react-router-dom';
 import { ToastText } from './ToastElements';
 import { useDispatch } from 'react-redux'
 import { logout } from '../redux/userRedux'
 import { emptyCart } from '../redux/cartRedux'
 import { useState } from 'react';
 import { popularProducts } from '../data';
+import { Navigate } from 'react-router-dom';
 
 const Container = styled.div`
 height: 60px;
@@ -94,9 +95,12 @@ const Navbar = () => {
     status: false,
     bg:""
   })
-  if(!user){
-    <Hide>{console.log("nothing hidden")}</Hide>
-   }else { <Hide style={{display:'none'}}>{console.log("hidden")}</Hide>}
+  useEffect(()=>{
+    const display = ()=>{
+      !user ? <Navigate style={{display:'none'}}/> : <Navigate/>
+    }
+    display();
+  },[])
   const notify = ()=>{
     dispatch(logout())
     dispatch(emptyCart()) ?
@@ -138,7 +142,7 @@ const Navbar = () => {
                    
                    <Link to = "/register" style={{textDecoration: 'none', color:'teal'}}><MenuItem>REGISTER</MenuItem></Link>
                     <Link to = "/login" style={{textDecoration: 'none', color:'teal'}}><MenuItem>LOG IN</MenuItem></Link>
-                    <Link to = "/"  onClick={notify} style={{textDecoration: 'none', color:'teal'}}><MenuItem>LOGOUT</MenuItem></Link>
+                    <Navigate to = "/"  onClick={notify} style={{textDecoration: 'none', color:'teal'}}><MenuItem>LOGOUT</MenuItem></Navigate>
                     <MenuItem>
                     <Badge badgeContent={cart.quantity} color="secondary">
                     <Link to = "/cart">
