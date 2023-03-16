@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+
 import styled, {keyframes} from 'styled-components'
 import {Search,ShoppingCartOutlined} from "@material-ui/icons"
 import {Badge} from "@material-ui/core";
