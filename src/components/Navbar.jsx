@@ -11,7 +11,7 @@ import { logout } from '../redux/userRedux'
 import { emptyCart } from '../redux/cartRedux'
 import { useState } from 'react';
 import { popularProducts } from '../data';
-import { Navigate } from 'react-router-dom';
+
 
 const Container = styled.div`
 height: 60px;
