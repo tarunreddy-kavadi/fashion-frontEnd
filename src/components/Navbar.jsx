@@ -1,4 +1,3 @@
-
 import styled, {keyframes} from 'styled-components'
 import {Search,ShoppingCartOutlined} from "@material-ui/icons"
 import {Badge} from "@material-ui/core";
@@ -11,6 +10,7 @@ import { logout } from '../redux/userRedux'
 import { emptyCart } from '../redux/cartRedux'
 import { useState } from 'react';
 import { popularProducts } from '../data';
+import Register from '../pages/Register';
 
 
 const Container = styled.div`
@@ -108,8 +108,8 @@ const Navbar = () => {
       status: true,
       bg:'red'
     })
-    
   }
+  
   return (
     <Container>
          <Wrapper>
@@ -134,10 +134,9 @@ const Navbar = () => {
                 </Center>
                 <Right>
                   {/* {login} */}
-                   
-                   <Link to = "/register" style={{textDecoration: 'none', color:'teal'}}><MenuItem>REGISTER</MenuItem></Link>
-                    <Link to = "/login" style={{textDecoration: 'none', color:'teal'}}><MenuItem>LOG IN</MenuItem></Link>
-                    <Navigate to = "/"  onClick={notify} style={{textDecoration: 'none', color:'teal'}} ><MenuItem>LOGOUT</MenuItem></Navigate>
+                   <Link to = "/register" style={{textDecoration: 'none', color:'teal',display:user.currentUser ? 'none': <Link/>}}  ><MenuItem>REGISTER</MenuItem></Link>
+                    <Link to = "/login" style={{textDecoration: 'none', color:'teal',display:user.currentUser ? 'none': <Link/>}}><MenuItem>LOG IN</MenuItem></Link>
+                    <Link to = "/"  onClick={notify} style={{textDecoration: 'none', color:'teal',display:user.currentUser ? <Link/>: 'none'}} ><MenuItem>LOGOUT</MenuItem></Link>
                     <MenuItem>
                     <Badge badgeContent={cart.quantity} color="secondary">
                     <Link to = "/cart">

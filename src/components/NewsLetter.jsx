@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {mobile} from '../responsive'
-import React,{useEffect} from 'react'
+import React from 'react'
 import OneSignal from 'react-onesignal';
 
 const Container = styled.div`
@@ -58,10 +58,8 @@ const NewsLetter = () => {
     <Desc>Get timely updates from your favorite products.</Desc>
     <InputContainer>
     <Input placeholder='Your eamil' />
-    <Button className='onesignal-customlink-container' onClick={useEffect(() => {
-    runOneSignal();
-  })}>
-    </Button>
+    <Button className='onesignal-customlink-container' onClick={runOneSignal} />
+   
     </InputContainer>
    </Container>
   )

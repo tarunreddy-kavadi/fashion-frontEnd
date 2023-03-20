@@ -25,7 +25,6 @@ const App = () => {
     if (!user) {
       return <Navigate to="/" replace />;
     }
-  
     return children;
   };
   return (
@@ -36,15 +35,9 @@ const App = () => {
      <Route path="/products/:category" element={<ProductList />} />
      <Route path= "/favorite" element={<Favorite/>} />
      <Route path="/product/:id" element={<Product />} />
-     <Route
-          path="cart"
-          element={
-     <ProtectedRoute user={user}> 
-     <Cart /> 
-      </ProtectedRoute>
-          } />
+     <Route path="/cart" element={ <ProtectedRoute user={user}> <Cart /> </ProtectedRoute>} />
      <Route path="/order" element={<Order />}/>
-     <Route path="/login" element= {user ? <Navigate to ="/"/> : <Login/>}/>
+     <Route path="/login" element= {user ? <Navigate to = "/"/> : <Login />}/>
      <Route path="/register" element={user ?<Navigate to = "/"/> : <Register/>} />
     <Route path ="/success" placeholder="search..." data={Products}element={<Success/>}/>
     <Route path ="/cancel" element={<Cancel/>}/>

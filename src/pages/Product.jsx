@@ -7,14 +7,14 @@ import Footer from '../components/Footer';
 import { Add, ArrowLeft, ArrowRight, Remove} from '@material-ui/icons';
 import {mobile} from '../responsive'
 import { useLocation } from 'react-router-dom';
-import { publicRequest, TOKEN, userRequest, verify } from '../requestMethods';
+import { publicRequest, TOKEN, userRequest} from '../requestMethods';
 import {useState} from 'react'
 import { addProduct } from '../redux/cartRedux';
 import { useDispatch } from 'react-redux';
 import { ToastContainer } from '../components/ToastElements';
 import { ToastText } from '../components/ToastElements';
 import { useSelector } from 'react-redux';
-import { postingProductDB } from '../redux/apiCalls';
+
 
 const Container = styled.div``;
 const Wrapper = styled.div`

@@ -1,5 +1,5 @@
 
-import { Add, Delete, Remove, Close, FavoriteBorderOutlined, LocalShipping, ShoppingBasketOutlined, ShoppingBasketRounded, ShoppingBasket } from "@material-ui/icons";
+import { Add, Delete, Remove, Close, FavoriteBorderOutlined, LocalShipping,ShoppingBasket } from "@material-ui/icons";
 import {Badge} from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
@@ -9,7 +9,7 @@ import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
-import { userRequest, verify } from "../requestMethods";
+import { userRequest} from "../requestMethods";
 import { useNavigate} from "react-router";
 import { Link,Navigate } from "react-router-dom";
 import { updateAmountProduct, deleteCart,addressAll} from "../redux/cartRedux";
@@ -50,11 +50,6 @@ const TopButton = styled.button`
 
 const TopTexts = styled.div`
   ${mobile({ display: "none" })}
-`;
-const TopText = styled.span`
-  text-decoration: underline;
-  cursor: pointer;
-  margin: 0px 10px;
 `;
 
 const Bottom = styled.div`
@@ -222,10 +217,7 @@ const Cart = () => {
   const [stripeToken, setStripeToken] = useState(null);
   const[quantity,setQuantity] = useState(0);
   const[addressNo,setAddressNo] = useState("");
-  const[Apartment,setApartment] = useState("");
   const[city,setCity] = useState("");
-  const[state,setState] = useState("");
-  const[country,setCountry] = useState("");
   const[postcode,setPostcode] = useState("");
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
@@ -347,8 +339,7 @@ const emptycart = cart.quantity === 0 ? <Navigate to = "/"/>:"";
             <Form>
             <input style={{width:"50%", height:"40px", backgroundColor:"#f1f1f1"}}
                 name="apartment" placeholder="Apartment number" type="text"
-                autoComplete="address-line2" onChange={(e)=>setApartment(e.target.value)}
-            />
+                autoComplete="address-line2" />
             </Form>
             <Form>
             <input style={{width:"50%", height:"40px", backgroundColor:"#f1f1f1" }}
@@ -359,13 +350,13 @@ const emptycart = cart.quantity === 0 ? <Navigate to = "/"/>:"";
             <Form>
             <input style={{width:"50%", height:"40px", backgroundColor:"#f1f1f1"}}
                 name="state" placeholder="State" type="text"
-                autoComplete="address-level1" onChange={(e)=>setState(e.target.value)}
+                autoComplete="address-level1" 
             />
             </Form>
             <Form>
             <input style={{width:"50%", height:"40px", backgroundColor:"#f1f1f1"}}
                 name="country" placeholder="Country" type="text"
-                autoComplete="country" onChange={(e)=>setCountry(e.target.value)}
+                autoComplete="country" 
             />
             </Form>
             <Form>

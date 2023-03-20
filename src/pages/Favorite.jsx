@@ -25,9 +25,9 @@ const Favorite = () => {
     <Title>WISH LIST</Title>
     <br/>
     <ProductDetail>
-     {console.log(<img src={cart} alt={'Product-Image'}/>)}
+     {console.log(<img src={cart} alt=''/>)}
      {cart?.map((images)=>{
-    return <Image src={images.favorite} alt={'Product-Image'} />
+    return <Image src={images.favorite} alt='' />
      })
       }
     </ProductDetail>

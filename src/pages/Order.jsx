@@ -71,7 +71,7 @@ const SummaryItemPrice = styled.span``;
 const ProductSize = styled.span``;
 const Order = ()=>{
     const user = useSelector((state)=> state.user.currentUser._id);
-    const cart = useSelector((state)=> state.cart);
+    
     const [order, setOrder] = useState([])
     useEffect(()=>{
         const getOrder = async()=>{
