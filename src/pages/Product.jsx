@@ -75,6 +75,7 @@ const Thumbnail = styled.div`
   background-image: url(${({ src }) => src});
   background-size: cover;
   background-position: center;
+  animation: slideshow 10s linear infinite;
   flex-grow: 1;
   :hover {
     opacity: 1;
@@ -266,8 +267,7 @@ const Product = () => {
       <Wrapper>
         <ImageContainer>
           <ImageBox>
-            <img src={images?.[activeIndex]} />
-            {/* <img  src={images?.[activeIndex]}  alt={`productImage`} /> */}
+            <img src={images?.[activeIndex]} alt={`productImage`} />
             <NavButton position="left" onClick={moveTo(activeIndex - 1)}>
               <ArrowLeft />
             </NavButton>
