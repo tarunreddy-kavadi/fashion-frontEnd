@@ -38,7 +38,7 @@ const ImageBox = styled.div`
     left: 0;
     max-width: 100%;
     max-height: 100%;
-    transition: 0.5s all ease-in-out;
+
     animation: slideshow 10s linear infinite;
     &:hover {
       transform: scale(1.5);
