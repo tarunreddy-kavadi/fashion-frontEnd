@@ -269,7 +269,7 @@ const Product = () => {
       <Wrapper>
         <ImageContainer>
           <ImageBox>
-            <img src={image?.[activeIndex]} />
+            <img src={images?.[activeIndex]} />
             {/* <img  src={images?.[activeIndex]}  alt={`productImage`} /> */}
             <NavButton position="left" onClick={moveTo(activeIndex - 1)}>
               <ArrowLeft />
