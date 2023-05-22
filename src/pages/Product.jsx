@@ -38,11 +38,8 @@ const ImageBox = styled.div`
     left: 0;
     max-width: 100%;
     max-height: 100%;
-
     animation: slideshow 10s linear infinite;
-    &:hover {
-      transform: scale(1.5);
-    }
+
     ${mobile({
       top: "10px",
       padding: "15px",
