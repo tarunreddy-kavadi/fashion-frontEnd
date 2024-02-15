@@ -3,7 +3,7 @@ import { signupStart, signupSuccess, signupFailure } from "./registerRedux";
 import { publicRequest} from "../requestMethods";
 
 // import { searchProductFailure, searchProductStart, searchProductSuccess } from "./searchRedux";
-
+// here dispatch and user is coming from login page and user is props we can write as user or props. same goes with register
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
