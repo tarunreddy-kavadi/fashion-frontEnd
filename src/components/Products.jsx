@@ -58,6 +58,7 @@ const Products = ({ cat, filters, sort }) => {
       { cat
       ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
       :products.slice(0,8).map((item)=> <Product item={item} key={item.id}/>)}
+      // here you are passing the product item and its id to product component
     </Container>
   );
 };
