@@ -164,6 +164,8 @@ const Product = () => {
   const location = useLocation();
   // useLocation captures the webpage location in the website Ex: Product page is in Fashion website.
   const id = location.pathname.split("/")[2];
+  // the id for this paticular product is in the url before you are opening the id is passing from product component check it
+  // here you are using product/:id which is already assigned or choose by user and the id is coming from product component
   // pathname.split("/")[2] means the webpage pathname EX:localhost:3000/user/635ea4b1a7b1587e91a427e4 this is pathname and split it and take 2nd in the array so it takes "id".
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(0);
