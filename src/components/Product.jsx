@@ -89,6 +89,7 @@ import {
           </Icon>
           <Icon>
             <Link to={`/product/${item._id}`}>
+              //you are passing id to the product link that is in product page 
             <SearchOutlined />
             </Link>
           </Icon>
