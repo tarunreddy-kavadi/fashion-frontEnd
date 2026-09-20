@@ -181,7 +181,7 @@ const Product = () => {
   });
   const dispatch = useDispatch();
   const images = product.img;
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart); // useSelector((state) => state.cart) here the state.cart is the key mentioned in redux store. in STORE.JS file the you configureStore with the key the key needs to be matching with the key in USESELECTOR "useSelector does not care what you named your slice file or your slice variable. It only cares about the key name you typed inside configureStore." 
   const user = useSelector((state) => state.user.currentUser._id);
   //UseEffect for Toast
   useEffect(() => {
